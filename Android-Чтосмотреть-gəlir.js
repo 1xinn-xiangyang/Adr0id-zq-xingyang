@@ -1,4 +1,4 @@
-const $ = new Env("中青看点收益统计");
+const $ = new Env("中青看点（向阳");
 const notify = $.isNode() ? require('./sendNotify') : '';
 message = ""
 let zq_cookie= $.isNode() ? (process.env.zq_cookie ? process.env.zq_cookie : "") : ($.getdata('zq_cookie') ? $.getdata('zq_cookie') : "")
@@ -110,7 +110,7 @@ function today_score(zq_cookie1,nickname1,timeout = 0) {
 
                 const result = JSON.parse(data)
                 if(result.status == 0){
-                    console.log('\n向阳今日收益总计:'+result.user.today_score)
+                    console.log('\n今日收益总计:'+result.user.today_score)
                     console.log('\n当前金币总数:'+result.user.score)
                     console.log('\n折合人民币总数:'+result.user.money)
                     $.message = `\n今日收益总计:${result.user.today_score}金币\n当前金币总数:${result.user.score}金币 \n折合人民币总数:${result.user.money}元`
