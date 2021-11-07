@@ -1,4 +1,4 @@
-const $ = new Env("中青看点（向阳");
+const $ = new Env("中青看点收益统计");
 const notify = $.isNode() ? require('./sendNotify') : '';
 message = ""
 let zq_cookie= $.isNode() ? (process.env.zq_cookie ? process.env.zq_cookie : "") : ($.getdata('zq_cookie') ? $.getdata('zq_cookie') : "")
@@ -50,7 +50,7 @@ Object.keys(zq_cookies).forEach((item) => {
              console.log(`--------第 ${k + 1} 个账号收益查询中--------\n`)
              await nickname(zq_cookie2)
              if ($.message.length != 0) {
-                 message += "账号" + (k + 1) + "： \n" + $.message + " \n"
+                 message += "向阳" + (k + 1) + "： \n" + $.message + " \n"
              }
              await $.wait(4000);
              console.log("\n\n")
@@ -58,10 +58,10 @@ Object.keys(zq_cookies).forEach((item) => {
 
 
          if (message.length != 0) {
-             await notify ? notify.sendNotify("中青看点（向阳")", `${message}\n\n Android-Чтосмотреть-gəlir`) :
-                 $.msg($.name, "中青看点（向阳")", `${message}\n\nAndroid-Чтосмотреть-gəlir`);
+             await notify ? notify.sendNotify("中青看点收益查询", `${message}\n\n Android-Чтосмотреть-gəlir`) :
+                 $.msg($.name, "中青看点收益查询", `${message}\n\nAndroid-Чтосмотреть-gəlir`);
          } else if ($.isNode()) {
-             await notify.sendNotify("中青看点（向阳")", `${message}\n\nAndroid-Чтосмотреть-gəlir`);
+             await notify.sendNotify("中青看点收益查询", `${message}\n\nAndroid-Чтосмотреть-gəlir`);
          }
      }
      })()
@@ -85,8 +85,8 @@ function nickname(zq_cookie2,timeout = 0) {
                     nickname1 =result.items.user.nickname
                     await $.wait(1000);
                     await today_score(zq_cookie1,nickname1)
-                  
-            
+
+
                 }else{
                      console.log(result)
                 }
