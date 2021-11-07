@@ -58,10 +58,10 @@ Object.keys(zq_cookies).forEach((item) => {
 
 
          if (message.length != 0) {
-             await notify ? notify.sendNotify("中青看点收益查询", `${message}\n\n Android-Чтосмотреть-gəlir`) :
-                 $.msg($.name, "中青看点收益查询", `${message}\n\nAndroid-Чтосмотреть-gəlir`);
+             await notify ? notify.sendNotify("中青看点（向阳")", `${message}\n\n Android-Чтосмотреть-gəlir`) :
+                 $.msg($.name, "中青看点（向阳")", `${message}\n\nAndroid-Чтосмотреть-gəlir`);
          } else if ($.isNode()) {
-             await notify.sendNotify("中青看点收益查询", `${message}\n\nAndroid-Чтосмотреть-gəlir`);
+             await notify.sendNotify("中青看点（向阳")", `${message}\n\nAndroid-Чтосмотреть-gəlir`);
          }
      }
      })()
